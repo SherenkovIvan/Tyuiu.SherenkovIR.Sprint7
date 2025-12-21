@@ -74,7 +74,7 @@
         {
             Orders = Orders.OrderBy(o => o.Price).ToList();
         }
-
+        // Возвращает данные с общей стоимостью, средней стоимостью, минимальной и максимальной стоимостью
         public (decimal TotalCost, decimal AverageCost, decimal MinCost, decimal MaxCost) GetStatistics()
         {
             var totalCost = Orders.Sum(o => o.Price * o.Quantity);
