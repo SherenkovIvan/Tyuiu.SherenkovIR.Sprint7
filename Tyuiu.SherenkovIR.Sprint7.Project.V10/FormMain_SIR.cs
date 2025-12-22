@@ -29,8 +29,8 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
                     {
                         orderManager.AddOrder(order);
                     }
-                    UpdateDataGridView();
-                    UpdateChart();
+                    
+
                 }
                 catch (Exception ex)
                 {
@@ -41,12 +41,29 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
 
         private void ButtonAddOrder_SIR_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void ButtonSaveOrder_SIR_Click(object sender, EventArgs e)
         {
+            var saveFileDialog = new SaveFileDialog
+            {
+                Filter = "CSV Files (*.csv)|*.csv",
+                Title = "Save CSV File"
+            };
 
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    csvManager.SaveToCSV(orderManager.Orders, saveFileDialog.FileName);
+                    MessageBox.Show("?????? ??????? ????????.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
 
         private void ButtonSearch_SIR_Click(object sender, EventArgs e)
