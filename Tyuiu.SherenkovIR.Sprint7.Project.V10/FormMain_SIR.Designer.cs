@@ -54,6 +54,7 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
             toolStrip_SIR = new ToolStrip();
             toolStripButtonAboutProgramm_SIR = new ToolStripButton();
             toolStripButtonUserGuide_SIR = new ToolStripButton();
+            toolStripButtonT_SIR = new ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)dataGridViewOrder_SIR).BeginInit();
             ((System.ComponentModel.ISupportInitialize)chartOrder_SIR).BeginInit();
             toolStrip_SIR.SuspendLayout();
@@ -216,7 +217,7 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
             toolStrip_SIR.Dock = DockStyle.Bottom;
             toolStrip_SIR.GripStyle = ToolStripGripStyle.Hidden;
             toolStrip_SIR.ImageScalingSize = new Size(20, 20);
-            toolStrip_SIR.Items.AddRange(new ToolStripItem[] { toolStripButtonAboutProgramm_SIR, toolStripButtonUserGuide_SIR });
+            toolStrip_SIR.Items.AddRange(new ToolStripItem[] { toolStripButtonAboutProgramm_SIR, toolStripButtonUserGuide_SIR, toolStripButtonT_SIR });
             toolStrip_SIR.Location = new Point(0, 553);
             toolStrip_SIR.Name = "toolStrip_SIR";
             toolStrip_SIR.Size = new Size(982, 27);
@@ -232,6 +233,7 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
             toolStripButtonAboutProgramm_SIR.Size = new Size(29, 24);
             toolStripButtonAboutProgramm_SIR.Text = "О программе";
             toolStripButtonAboutProgramm_SIR.ToolTipText = "О чем приложение";
+            toolStripButtonAboutProgramm_SIR.Click += toolStripButtonAboutProgramm_SIR_Click;
             // 
             // toolStripButtonUserGuide_SIR
             // 
@@ -242,6 +244,16 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
             toolStripButtonUserGuide_SIR.Size = new Size(29, 24);
             toolStripButtonUserGuide_SIR.Text = "Информация для пользователя";
             toolStripButtonUserGuide_SIR.ToolTipText = "Руководство пользователя";
+            toolStripButtonUserGuide_SIR.Click += toolStripButtonUserGuide_SIR_Click;
+            // 
+            // toolStripButtonT_SIR
+            // 
+            toolStripButtonT_SIR.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolStripButtonT_SIR.Image = (Image)resources.GetObject("toolStripButtonT_SIR.Image");
+            toolStripButtonT_SIR.ImageTransparentColor = Color.Magenta;
+            toolStripButtonT_SIR.Name = "toolStripButtonT_SIR";
+            toolStripButtonT_SIR.Size = new Size(29, 24);
+            toolStripButtonT_SIR.Click += toolStripButtonT_SIR_Click;
             // 
             // FormMain_SIR
             // 
@@ -294,5 +306,6 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
         private ToolStrip toolStrip_SIR;
         private ToolStripButton toolStripButtonAboutProgramm_SIR;
         private ToolStripButton toolStripButtonUserGuide_SIR;
+        private ToolStripButton toolStripButtonT_SIR;
     }
 }

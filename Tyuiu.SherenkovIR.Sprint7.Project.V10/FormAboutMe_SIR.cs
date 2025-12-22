@@ -7,16 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Tyuiu.SherenkovIR.Sprint7.Project.V10.Lib;
 
 namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
 {
-    public partial class FormAboutOrder_SIR : Form
+    public partial class FormAboutMe_SIR : Form
     {
-        public FormAboutOrder_SIR()
+        public FormAboutMe_SIR()
         {
             InitializeComponent();
         }
 
+        private void buttonClose_SIR_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
