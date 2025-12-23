@@ -42,6 +42,7 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
             textBoxAboutMe_SIR.Location = new Point(21, 12);
             textBoxAboutMe_SIR.Multiline = true;
             textBoxAboutMe_SIR.Name = "textBoxAboutMe_SIR";
+            textBoxAboutMe_SIR.ReadOnly = true;
             textBoxAboutMe_SIR.Size = new Size(392, 297);
             textBoxAboutMe_SIR.TabIndex = 0;
             textBoxAboutMe_SIR.Text = resources.GetString("textBoxAboutMe_SIR.Text");

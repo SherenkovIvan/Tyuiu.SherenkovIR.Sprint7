@@ -17,6 +17,9 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
         public FormAboutOrder_SIR()
         {
             InitializeComponent();
+            this.MaximumSize = this.MinimumSize = this.Size;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false; 
         }
 
         private void ButtonSaveOrder_SIR_Click(object sender, EventArgs e)

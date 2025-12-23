@@ -31,23 +31,24 @@
     // Класс OrderManager управляет коллекцией заказов
     public class OrderManager
     {
+        // Публичное свойство для доступа к списку заказов
         public List<Order> Orders { get; set; }
-
+        // Конструктор инициализирует пустой список заказов
         public OrderManager()
         {
             Orders = new List<Order>();
         }
-
+        // Метод для добавления нового заказа в коллекцию
         public void AddOrder(Order order)
         {
             Orders.Add(order);
         }
-
+        // Метод для фильтрации заказов по диапазону цен
         public List<Order> FilterByPrice(decimal minPrice, decimal maxPrice)
         {
             Console.WriteLine($"FilterByPrice called: min={minPrice}, max={maxPrice}");
             Console.WriteLine($"Total orders: {Orders.Count}");
-
+            // Отладочный вывод всех заказов с информацией о попадании в диапазон
             foreach (var order in Orders)
             {
                 Console.WriteLine($"Order {order.LastName}: Price={order.Price}, InRange={order.Price >= minPrice && order.Price <= maxPrice}");
@@ -55,9 +56,10 @@
 
             return Orders.Where(o => o.Price >= minPrice && o.Price <= maxPrice).ToList();
         }
-
+        // Метод для поиска заказов по имени клиента
         public List<Order> SearchByClientName(string clientName)
         {
+            // Если строка поиска пуста или содержит только пробелы, возвращаем пустой список
             if (string.IsNullOrWhiteSpace(clientName))
             {
                 return new List<Order>(); 
@@ -67,6 +69,7 @@
                 (o.FirstName != null && o.FirstName.Contains(clientName, StringComparison.OrdinalIgnoreCase)) ||
                 (o.MiddleName != null && o.MiddleName.Contains(clientName, StringComparison.OrdinalIgnoreCase))).ToList();
         }
+        // Метод для сортировки заказов по цене (по возрастанию)
         public void SortByPrice()
         {
             Orders = Orders.OrderBy(o => o.Price).ToList();
@@ -80,6 +83,7 @@
             var maxCost = Orders.Max(o => o.Price * o.Quantity);
             return (totalCost, averageCost, minCost, maxCost);
         }
+        // Метод для удаления заказа из коллекции
         public bool RemoveOrder(Order orderToRemove)
         {
             if (orderToRemove == null) return false;
@@ -126,14 +130,16 @@
                     while (!reader.EndOfStream)
                     {
                         var line = reader.ReadLine();
-
+                        // Пропускаем пустые строки
                         if (string.IsNullOrEmpty(line)) continue;
-
-                        var values = line.Split(';');                   
+                        // Разделяем строку по запятым
+                        var values = line.Split(',');
+                        // Проверяем количество столбцов (должно быть 12)
                         if (values.Length != 12)
                         {
                             throw new Exception("Неверное количество столбцов в файле.");
                         }
+                        // Создаем объект Order и заполняем его свойства
                         var order = new Order
                         {
                             OrderNumber = values[0],
@@ -149,7 +155,7 @@
                             Quantity = int.Parse(values[10]),
                             AccountNumber = values[11]
                         };
-
+                        // Добавляем заказ в список
                         orders.Add(order);
                     }
                 }
