@@ -36,7 +36,6 @@
             textBoxCity_SIR = new TextBox();
             textBoxAddress_SIR = new TextBox();
             textBoxNumberPhone_SIR = new TextBox();
-            dateTimePickerOrderDate_SIR = new DateTimePicker();
             textBoxOrderName_SIR = new TextBox();
             textBoxPrise_SIR = new TextBox();
             textBoxQuanity_SIR = new TextBox();
@@ -112,13 +111,6 @@
             textBoxNumberPhone_SIR.Name = "textBoxNumberPhone_SIR";
             textBoxNumberPhone_SIR.Size = new Size(200, 27);
             textBoxNumberPhone_SIR.TabIndex = 8;
-            // 
-            // dateTimePickerOrderDate_SIR
-            // 
-            dateTimePickerOrderDate_SIR.Location = new Point(12, 30);
-            dateTimePickerOrderDate_SIR.Name = "dateTimePickerOrderDate_SIR";
-            dateTimePickerOrderDate_SIR.Size = new Size(371, 27);
-            dateTimePickerOrderDate_SIR.TabIndex = 9;
             // 
             // textBoxOrderName_SIR
             // 
@@ -331,7 +323,6 @@
             Controls.Add(textBoxQuanity_SIR);
             Controls.Add(textBoxPrise_SIR);
             Controls.Add(textBoxOrderName_SIR);
-            Controls.Add(dateTimePickerOrderDate_SIR);
             Controls.Add(textBoxNumberPhone_SIR);
             Controls.Add(textBoxAddress_SIR);
             Controls.Add(textBoxCity_SIR);
@@ -356,7 +347,6 @@
         private TextBox textBoxCity_SIR;
         private TextBox textBoxAddress_SIR;
         private TextBox textBoxNumberPhone_SIR;
-        private DateTimePicker dateTimePickerOrderDate_SIR;
         private TextBox textBoxOrderName_SIR;
         private TextBox textBoxPrise_SIR;
         private TextBox textBoxQuanity_SIR;

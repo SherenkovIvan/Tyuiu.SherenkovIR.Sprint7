@@ -41,11 +41,11 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
             toolTip_SIR = new ToolTip(components);
             buttonSaveOrder_SIR = new Button();
             buttonSearch_SIR = new Button();
-            buttonSortByDate_SIR = new Button();
             buttonSortPrise_SIR = new Button();
             buttonFilterPrice_SIR = new Button();
             buttonStatistic_SIR = new Button();
             buttonLoadCSV_SIR = new Button();
+            buttonClose_SIR = new Button();
             textBoxSearch_SIR = new TextBox();
             textBoxMinPrice_SIR = new TextBox();
             textBoxMaxPrice_SIR = new TextBox();
@@ -54,6 +54,7 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
             toolStrip_SIR = new ToolStrip();
             toolStripButtonAboutProgramm_SIR = new ToolStripButton();
             toolStripButtonUserGuide_SIR = new ToolStripButton();
+            buttonRemovePrise_SIR = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewOrder_SIR).BeginInit();
             ((System.ComponentModel.ISupportInitialize)chartOrder_SIR).BeginInit();
             toolStrip_SIR.SuspendLayout();
@@ -63,19 +64,18 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
             // 
             dataGridViewOrder_SIR.BackgroundColor = SystemColors.InactiveCaption;
             dataGridViewOrder_SIR.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewOrder_SIR.Dock = DockStyle.Fill;
             dataGridViewOrder_SIR.GridColor = Color.Black;
             dataGridViewOrder_SIR.Location = new Point(0, 0);
             dataGridViewOrder_SIR.Name = "dataGridViewOrder_SIR";
             dataGridViewOrder_SIR.RowHeadersWidth = 51;
-            dataGridViewOrder_SIR.Size = new Size(1178, 580);
+            dataGridViewOrder_SIR.Size = new Size(1178, 367);
             dataGridViewOrder_SIR.TabIndex = 0;
             // 
             // buttonAddOrder_SIR
             // 
             buttonAddOrder_SIR.BackColor = SystemColors.Control;
             buttonAddOrder_SIR.Image = (Image)resources.GetObject("buttonAddOrder_SIR.Image");
-            buttonAddOrder_SIR.Location = new Point(619, 493);
+            buttonAddOrder_SIR.Location = new Point(547, 481);
             buttonAddOrder_SIR.Name = "buttonAddOrder_SIR";
             buttonAddOrder_SIR.Size = new Size(84, 57);
             buttonAddOrder_SIR.TabIndex = 1;
@@ -109,22 +109,11 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
             buttonSearch_SIR.UseVisualStyleBackColor = true;
             buttonSearch_SIR.Click += ButtonSearch_SIR_Click;
             // 
-            // buttonSortByDate_SIR
-            // 
-            buttonSortByDate_SIR.Location = new Point(720, 495);
-            buttonSortByDate_SIR.Name = "buttonSortByDate_SIR";
-            buttonSortByDate_SIR.Size = new Size(169, 53);
-            buttonSortByDate_SIR.TabIndex = 5;
-            buttonSortByDate_SIR.Text = "Сортировать по дате";
-            toolTip_SIR.SetToolTip(buttonSortByDate_SIR, "Сортировка по дате ");
-            buttonSortByDate_SIR.UseVisualStyleBackColor = true;
-            buttonSortByDate_SIR.Click += buttonSortByDate_SIR_Click;
-            // 
             // buttonSortPrise_SIR
             // 
-            buttonSortPrise_SIR.Location = new Point(720, 436);
+            buttonSortPrise_SIR.Location = new Point(922, 431);
             buttonSortPrise_SIR.Name = "buttonSortPrise_SIR";
-            buttonSortPrise_SIR.Size = new Size(169, 53);
+            buttonSortPrise_SIR.Size = new Size(169, 48);
             buttonSortPrise_SIR.TabIndex = 6;
             buttonSortPrise_SIR.Text = "Сортировать по цене";
             toolTip_SIR.SetToolTip(buttonSortPrise_SIR, "Сортировка по цене");
@@ -133,7 +122,7 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
             // 
             // buttonFilterPrice_SIR
             // 
-            buttonFilterPrice_SIR.Location = new Point(906, 436);
+            buttonFilterPrice_SIR.Location = new Point(732, 431);
             buttonFilterPrice_SIR.Name = "buttonFilterPrice_SIR";
             buttonFilterPrice_SIR.Size = new Size(171, 48);
             buttonFilterPrice_SIR.TabIndex = 7;
@@ -145,7 +134,7 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
             // buttonStatistic_SIR
             // 
             buttonStatistic_SIR.Image = (Image)resources.GetObject("buttonStatistic_SIR.Image");
-            buttonStatistic_SIR.Location = new Point(431, 493);
+            buttonStatistic_SIR.Location = new Point(431, 393);
             buttonStatistic_SIR.Name = "buttonStatistic_SIR";
             buttonStatistic_SIR.Size = new Size(82, 58);
             buttonStatistic_SIR.TabIndex = 10;
@@ -156,13 +145,24 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
             // buttonLoadCSV_SIR
             // 
             buttonLoadCSV_SIR.Image = (Image)resources.GetObject("buttonLoadCSV_SIR.Image");
-            buttonLoadCSV_SIR.Location = new Point(519, 492);
+            buttonLoadCSV_SIR.Location = new Point(431, 481);
             buttonLoadCSV_SIR.Name = "buttonLoadCSV_SIR";
-            buttonLoadCSV_SIR.Size = new Size(94, 58);
+            buttonLoadCSV_SIR.Size = new Size(82, 58);
             buttonLoadCSV_SIR.TabIndex = 12;
             toolTip_SIR.SetToolTip(buttonLoadCSV_SIR, "Выбрать файл и загрузить");
             buttonLoadCSV_SIR.UseVisualStyleBackColor = true;
             buttonLoadCSV_SIR.Click += buttonLoadCSV_SIR_Click;
+            // 
+            // buttonClose_SIR
+            // 
+            buttonClose_SIR.Image = (Image)resources.GetObject("buttonClose_SIR.Image");
+            buttonClose_SIR.Location = new Point(651, 489);
+            buttonClose_SIR.Name = "buttonClose_SIR";
+            buttonClose_SIR.Size = new Size(51, 40);
+            buttonClose_SIR.TabIndex = 15;
+            toolTip_SIR.SetToolTip(buttonClose_SIR, "Сбросить фильтр");
+            buttonClose_SIR.UseVisualStyleBackColor = true;
+            buttonClose_SIR.Click += buttonClose_SIR_Click;
             // 
             // textBoxSearch_SIR
             // 
@@ -174,7 +174,7 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
             // 
             // textBoxMinPrice_SIR
             // 
-            textBoxMinPrice_SIR.Location = new Point(906, 490);
+            textBoxMinPrice_SIR.Location = new Point(732, 485);
             textBoxMinPrice_SIR.Multiline = true;
             textBoxMinPrice_SIR.Name = "textBoxMinPrice_SIR";
             textBoxMinPrice_SIR.Size = new Size(81, 46);
@@ -182,7 +182,7 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
             // 
             // textBoxMaxPrice_SIR
             // 
-            textBoxMaxPrice_SIR.Location = new Point(993, 490);
+            textBoxMaxPrice_SIR.Location = new Point(819, 485);
             textBoxMaxPrice_SIR.Multiline = true;
             textBoxMaxPrice_SIR.Name = "textBoxMaxPrice_SIR";
             textBoxMaxPrice_SIR.Size = new Size(84, 46);
@@ -247,11 +247,24 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
             toolStripButtonUserGuide_SIR.ToolTipText = "Руководство пользователя";
             toolStripButtonUserGuide_SIR.Click += toolStripButtonUserGuide_SIR_Click;
             // 
+            // buttonRemovePrise_SIR
+            // 
+            buttonRemovePrise_SIR.Location = new Point(922, 485);
+            buttonRemovePrise_SIR.Name = "buttonRemovePrise_SIR";
+            buttonRemovePrise_SIR.Size = new Size(169, 46);
+            buttonRemovePrise_SIR.TabIndex = 16;
+            buttonRemovePrise_SIR.Text = "Сбросить фильтр ";
+            toolTip_SIR.SetToolTip(buttonRemovePrise_SIR, "Сбросить фльтр цены");
+            buttonRemovePrise_SIR.UseVisualStyleBackColor = true;
+            buttonRemovePrise_SIR.Click += buttonRemovePrise_SIR_Click;
+            // 
             // FormMain_SIR
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1178, 580);
+            Controls.Add(buttonRemovePrise_SIR);
+            Controls.Add(buttonClose_SIR);
             Controls.Add(toolStrip_SIR);
             Controls.Add(chartOrder_SIR);
             Controls.Add(buttonLoadCSV_SIR);
@@ -261,7 +274,6 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
             Controls.Add(textBoxMinPrice_SIR);
             Controls.Add(buttonFilterPrice_SIR);
             Controls.Add(buttonSortPrise_SIR);
-            Controls.Add(buttonSortByDate_SIR);
             Controls.Add(textBoxSearch_SIR);
             Controls.Add(buttonSearch_SIR);
             Controls.Add(buttonSaveOrder_SIR);
@@ -269,7 +281,6 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
             Controls.Add(dataGridViewOrder_SIR);
             Name = "FormMain_SIR";
             Text = "Приложение для заказов. Выполнил Шеренков И. Р. студент группы ИБКСБ-25-1";
-            Load += FormMain_SIR_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewOrder_SIR).EndInit();
             ((System.ComponentModel.ISupportInitialize)chartOrder_SIR).EndInit();
             toolStrip_SIR.ResumeLayout(false);
@@ -286,7 +297,6 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
         private Button buttonSaveOrder_SIR;
         private Button buttonSearch_SIR;
         private TextBox textBoxSearch_SIR;
-        private Button buttonSortByDate_SIR;
         private Button buttonSortPrise_SIR;
         private Button buttonFilterPrice_SIR;
         private TextBox textBoxMinPrice_SIR;
@@ -298,5 +308,7 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
         private ToolStrip toolStrip_SIR;
         private ToolStripButton toolStripButtonAboutProgramm_SIR;
         private ToolStripButton toolStripButtonUserGuide_SIR;
+        private Button buttonClose_SIR;
+        private Button buttonRemovePrise_SIR;
     }
 }

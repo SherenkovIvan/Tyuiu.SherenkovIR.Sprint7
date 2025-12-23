@@ -19,8 +19,6 @@
 
         public string PhoneNumber { get; set; }
 
-        public DateTime OrderDate { get; set; }
-
         public string OrderName { get; set; }
 
         public decimal Price { get; set; }
@@ -65,11 +63,6 @@
                 o.FirstName.Contains(clientName, StringComparison.OrdinalIgnoreCase) ||
                 o.MiddleName.Contains(clientName, StringComparison.OrdinalIgnoreCase)).ToList();
         }
-
-        public void SortByOrderDate()
-        {
-            Orders = Orders.OrderBy(o => o.OrderDate).ToList();
-        }
         public void SortByPrice()
         {
             Orders = Orders.OrderBy(o => o.Price).ToList();
@@ -83,6 +76,20 @@
             var maxCost = Orders.Max(o => o.Price * o.Quantity);
             return (totalCost, averageCost, minCost, maxCost);
         }
+        public bool RemoveOrder(Order orderToRemove)
+        {
+            if (orderToRemove == null) return false;
+
+            Console.WriteLine($"Attempting to remove order: {orderToRemove.OrderNumber}");
+            Console.WriteLine($"Orders before removal: {Orders.Count}");
+
+            bool removed = Orders.Remove(orderToRemove);
+
+            Console.WriteLine($"Removal successful: {removed}");
+            Console.WriteLine($"Orders after removal: {Orders.Count}");
+
+            return removed;
+        }
     }
 
     // Класс CSVManager отвечает за работу с CSV файлами
@@ -92,10 +99,10 @@
         {
             using (var writer = new StreamWriter(filePath))
             {
-                writer.WriteLine("OrderNumber,LastName,FirstName,MiddleName,Index,City,Address,PhoneNumber,OrderDate,OrderName,Price,Quantity,AccountNumber");
+                writer.WriteLine("OrderNumber,LastName,FirstName,MiddleName,Index,City,Address,PhoneNumber,OrderName,Price,Quantity,AccountNumber");
                 foreach (var order in orders)
                 {
-                    writer.WriteLine($"{order.OrderNumber},{order.LastName},{order.FirstName},{order.MiddleName},{order.Index},{order.City},{order.Address},{order.PhoneNumber},{order.OrderDate},{order.OrderName},{order.Price},{order.Quantity},{order.AccountNumber}");
+                    writer.WriteLine($"{order.OrderNumber},{order.LastName},{order.FirstName},{order.MiddleName},{order.Index},{order.City},{order.Address},{order.PhoneNumber},{order.OrderName},{order.Price},{order.Quantity},{order.AccountNumber}");
                 }
             }
         }
@@ -118,12 +125,11 @@
 
                         if (string.IsNullOrEmpty(line)) continue;
 
-                        var values = line.Split(',');                   
-                        if (values.Length != 13)
+                        var values = line.Split(';');                   
+                        if (values.Length != 12)
                         {
                             throw new Exception("Неверное количество столбцов в файле.");
                         }
-                        // Создание объекта Order и заполнение его свойств
                         var order = new Order
                         {
                             OrderNumber = values[0],
@@ -134,11 +140,10 @@
                             City = values[5],
                             Address = values[6],
                             PhoneNumber = values[7],
-                            OrderDate = DateTime.Parse(values[8]),
-                            OrderName = values[9],
-                            Price = decimal.Parse(values[10]),
-                            Quantity = int.Parse(values[11]),
-                            AccountNumber = values[12]
+                            OrderName = values[8],
+                            Price = decimal.Parse(values[9]),
+                            Quantity = int.Parse(values[10]),
+                            AccountNumber = values[11]
                         };
 
                         orders.Add(order);

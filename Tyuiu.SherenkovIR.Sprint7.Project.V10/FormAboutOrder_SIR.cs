@@ -31,7 +31,6 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
                 City = textBoxCity_SIR.Text,
                 Address = textBoxAddress_SIR.Text,
                 PhoneNumber = textBoxNumberPhone_SIR.Text,
-                OrderDate = dateTimePickerOrderDate_SIR.Value,
                 OrderName = textBoxOrderName_SIR.Text,
                 Price = decimal.Parse(textBoxPrise_SIR.Text),
                 Quantity = int.Parse(textBoxQuanity_SIR.Text),

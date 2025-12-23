@@ -13,10 +13,6 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
             csvManager = new CSVManager();
         }
 
-        private void FormMain_SIR_Load(object sender, EventArgs e)
-        {
-            
-        }
 
         private void ButtonAddOrder_SIR_Click(object sender, EventArgs e)
         {
@@ -82,12 +78,6 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
             var searchTerm = textBoxSearch_SIR.Text;
             var filteredOrders = orderManager.SearchByClientName(searchTerm);
             dataGridViewOrder_SIR.DataSource = filteredOrders;
-        }
-
-        private void buttonSortByDate_SIR_Click(object sender, EventArgs e)
-        {
-            orderManager.SortByOrderDate();
-            UpdateDataGridView();
         }
 
         private void buttonSortPrise_SIR_Click(object sender, EventArgs e)
@@ -158,7 +148,62 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
             formAbout.ShowDialog();
         }
 
-       
+        private void buttonClose_SIR_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewOrder_SIR.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Выберите заказ для удаления!", "Информация",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            var result = MessageBox.Show("Вы уверены, что хотите удалить выбранный заказ?",
+                "Подтверждение удаления",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    var selectedOrder = (Order)dataGridViewOrder_SIR.SelectedRows[0].DataBoundItem;
+                    orderManager.RemoveOrder(selectedOrder);
+
+                    UpdateDataGridView();
+                    UpdateChart();
+
+                    MessageBox.Show("Заказ успешно удален!", "Успех",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка при удалении заказа: {ex.Message}", "Ошибка",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void buttonRemovePrise_SIR_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UpdateDataGridView();
+                textBoxMinPrice_SIR.Clear();
+                textBoxMaxPrice_SIR.Clear();
+
+                MessageBox.Show("Фильтр по цене сброшен. Отображаются все заказы.",
+                    "Сброс фильтра",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка при сбросе фильтра: {ex.Message}",
+                    "Ошибка",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
     }
 
 }
