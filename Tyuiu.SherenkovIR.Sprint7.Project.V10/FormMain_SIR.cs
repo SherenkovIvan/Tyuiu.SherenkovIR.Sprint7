@@ -75,9 +75,45 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
 
         private void ButtonSearch_SIR_Click(object sender, EventArgs e)
         {
-            var searchTerm = textBoxSearch_SIR.Text;
-            var filteredOrders = orderManager.SearchByClientName(searchTerm);
-            dataGridViewOrder_SIR.DataSource = filteredOrders;
+            try
+            {
+                var searchTerm = textBoxSearch_SIR.Text?.Trim(); 
+
+                if (orderManager.Orders == null || orderManager.Orders.Count == 0)
+                {
+                    MessageBox.Show("Нет заказов для поиска.", "Информация",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                var filteredOrders = orderManager.SearchByClientName(searchTerm);
+
+                if (filteredOrders == null || filteredOrders.Count == 0)
+                {
+                    dataGridViewOrder_SIR.DataSource = null;
+
+                    MessageBox.Show($"По запросу '{searchTerm}' ничего не найдено.",
+                        "Результаты поиска",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+                else
+                {
+                    dataGridViewOrder_SIR.DataSource = filteredOrders;
+
+                    MessageBox.Show($"Найдено заказов: {filteredOrders.Count}",
+                        "Результаты поиска",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка при поиске: {ex.Message}",
+                    "Ошибка",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
 
         private void buttonSortPrise_SIR_Click(object sender, EventArgs e)
@@ -203,6 +239,13 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
+        }
+
+        private void buttonRemoveSearch_SIR_Click(object sender, EventArgs e)
+        {
+            textBoxSearch_SIR.Clear();
+            UpdateDataGridView();
+            textBoxSearch_SIR.Focus();
         }
     }
 

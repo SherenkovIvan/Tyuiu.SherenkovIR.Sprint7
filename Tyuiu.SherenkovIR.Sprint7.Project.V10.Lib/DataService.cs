@@ -3,29 +3,29 @@
 
     public class Order
     {
-        public string OrderNumber { get; set; }
+        public string OrderNumber { get; set; } = string.Empty;
 
-        public string LastName { get; set; }
+        public string LastName { get; set; } = string.Empty;
 
-        public string FirstName { get; set; }
+        public string FirstName { get; set; } = string.Empty;
 
-        public string MiddleName { get; set; }
+        public string MiddleName { get; set; } = string.Empty;
 
-        public string Index { get; set; }
+        public string Index { get; set; } = string.Empty;
 
-        public string City { get; set; }
+        public string City { get; set; } = string.Empty;
 
-        public string Address { get; set; }
+        public string Address { get; set; } = string.Empty;
 
-        public string PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; } = string.Empty;
 
-        public string OrderName { get; set; }
+        public string OrderName { get; set; } = string.Empty;
 
-        public decimal Price { get; set; }
+        public decimal Price { get; set; } 
 
         public int Quantity { get; set; }
 
-        public string AccountNumber { get; set; }
+        public string AccountNumber { get; set; } = string.Empty;
     }
 
     // Класс OrderManager управляет коллекцией заказов
@@ -57,11 +57,15 @@
         }
 
         public List<Order> SearchByClientName(string clientName)
-        {          
-            return Orders.Where(o =>
-                o.LastName.Contains(clientName, StringComparison.OrdinalIgnoreCase) ||
-                o.FirstName.Contains(clientName, StringComparison.OrdinalIgnoreCase) ||
-                o.MiddleName.Contains(clientName, StringComparison.OrdinalIgnoreCase)).ToList();
+        {
+            if (string.IsNullOrWhiteSpace(clientName))
+            {
+                return new List<Order>(); 
+            }
+            return Orders.Where(o =>               
+                (o.LastName != null && o.LastName.Contains(clientName, StringComparison.OrdinalIgnoreCase)) ||
+                (o.FirstName != null && o.FirstName.Contains(clientName, StringComparison.OrdinalIgnoreCase)) ||
+                (o.MiddleName != null && o.MiddleName.Contains(clientName, StringComparison.OrdinalIgnoreCase))).ToList();
         }
         public void SortByPrice()
         {
