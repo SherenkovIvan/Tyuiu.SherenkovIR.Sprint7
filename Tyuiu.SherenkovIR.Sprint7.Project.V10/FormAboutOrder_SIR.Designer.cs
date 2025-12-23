@@ -117,7 +117,7 @@
             // 
             dateTimePickerOrderDate_SIR.Location = new Point(12, 30);
             dateTimePickerOrderDate_SIR.Name = "dateTimePickerOrderDate_SIR";
-            dateTimePickerOrderDate_SIR.Size = new Size(170, 27);
+            dateTimePickerOrderDate_SIR.Size = new Size(371, 27);
             dateTimePickerOrderDate_SIR.TabIndex = 9;
             // 
             // textBoxOrderName_SIR
@@ -130,14 +130,14 @@
             // 
             // textBoxPrise_SIR
             // 
-            textBoxPrise_SIR.Location = new Point(183, 384);
+            textBoxPrise_SIR.Location = new Point(183, 417);
             textBoxPrise_SIR.Name = "textBoxPrise_SIR";
             textBoxPrise_SIR.Size = new Size(200, 27);
             textBoxPrise_SIR.TabIndex = 11;
             // 
             // textBoxQuanity_SIR
             // 
-            textBoxQuanity_SIR.Location = new Point(183, 417);
+            textBoxQuanity_SIR.Location = new Point(184, 384);
             textBoxQuanity_SIR.Name = "textBoxQuanity_SIR";
             textBoxQuanity_SIR.Size = new Size(200, 27);
             textBoxQuanity_SIR.TabIndex = 12;
@@ -263,7 +263,7 @@
             // 
             // textBoxPPrise_SIR
             // 
-            textBoxPPrise_SIR.Location = new Point(12, 384);
+            textBoxPPrise_SIR.Location = new Point(12, 417);
             textBoxPPrise_SIR.Multiline = true;
             textBoxPPrise_SIR.Name = "textBoxPPrise_SIR";
             textBoxPPrise_SIR.ReadOnly = true;
@@ -274,7 +274,7 @@
             // 
             // textBoxQuanityQ_SIR
             // 
-            textBoxQuanityQ_SIR.Location = new Point(12, 417);
+            textBoxQuanityQ_SIR.Location = new Point(13, 384);
             textBoxQuanityQ_SIR.Multiline = true;
             textBoxQuanityQ_SIR.Name = "textBoxQuanityQ_SIR";
             textBoxQuanityQ_SIR.ReadOnly = true;
@@ -311,6 +311,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Cornsilk;
             ClientSize = new Size(619, 493);
             Controls.Add(buttonCancel_SIR);
             Controls.Add(AccountNumber_SIR);

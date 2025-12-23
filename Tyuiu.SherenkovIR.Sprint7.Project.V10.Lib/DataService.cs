@@ -121,7 +121,7 @@
                         var values = line.Split(',');                   
                         if (values.Length != 13)
                         {
-                            throw new Exception("Неверное количество строк в файле.");
+                            throw new Exception("Неверное количество столбцов в файле.");
                         }
                         // Создание объекта Order и заполнение его свойств
                         var order = new Order

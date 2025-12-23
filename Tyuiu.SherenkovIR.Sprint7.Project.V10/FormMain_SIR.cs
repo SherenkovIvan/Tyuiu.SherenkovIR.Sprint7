@@ -15,29 +15,7 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
 
         private void FormMain_SIR_Load(object sender, EventArgs e)
         {
-            var openFileDialog = new OpenFileDialog
-            {
-                Filter = "CSV Files (*.csv)|*.csv",
-                Title = "Select a CSV File"
-            };
-
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    var orders = csvManager.LoadFromCSV(openFileDialog.FileName);
-                    foreach (var order in orders)
-                    {
-                        orderManager.AddOrder(order);
-                    }
-                    UpdateDataGridView();
-                    UpdateChart();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
+            
         }
 
         private void ButtonAddOrder_SIR_Click(object sender, EventArgs e)
@@ -64,7 +42,7 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
                 try
                 {
                     csvManager.SaveToCSV(orderManager.Orders, saveFileDialog.FileName);
-                    MessageBox.Show("?????? ??????? ????????.");
+                    MessageBox.Show("Данные успешно сохранены.");
                 }
                 catch (Exception ex)
                 {
@@ -180,11 +158,7 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
             formAbout.ShowDialog();
         }
 
-        private void toolStripButtonT_SIR_Click(object sender, EventArgs e)
-        {
-            FormAboutOrder_SIR formabout = new FormAboutOrder_SIR();
-            formabout.ShowDialog();
-        }
+       
     }
 
 }

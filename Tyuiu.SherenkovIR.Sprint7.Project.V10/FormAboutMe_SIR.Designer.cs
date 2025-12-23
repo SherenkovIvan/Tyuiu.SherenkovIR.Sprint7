@@ -42,31 +42,33 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
             textBoxAboutMe_SIR.Location = new Point(21, 12);
             textBoxAboutMe_SIR.Multiline = true;
             textBoxAboutMe_SIR.Name = "textBoxAboutMe_SIR";
-            textBoxAboutMe_SIR.Size = new Size(322, 305);
+            textBoxAboutMe_SIR.Size = new Size(392, 297);
             textBoxAboutMe_SIR.TabIndex = 0;
             textBoxAboutMe_SIR.Text = resources.GetString("textBoxAboutMe_SIR.Text");
             // 
             // pictureBoxAvatar_SIR
             // 
-            pictureBoxAvatar_SIR.Location = new Point(369, 12);
+            pictureBoxAvatar_SIR.Image = (Image)resources.GetObject("pictureBoxAvatar_SIR.Image");
+            pictureBoxAvatar_SIR.Location = new Point(433, 13);
             pictureBoxAvatar_SIR.Margin = new Padding(3, 4, 3, 4);
             pictureBoxAvatar_SIR.Name = "pictureBoxAvatar_SIR";
-            pictureBoxAvatar_SIR.Size = new Size(314, 192);
+            pictureBoxAvatar_SIR.Size = new Size(209, 221);
             pictureBoxAvatar_SIR.TabIndex = 1;
             pictureBoxAvatar_SIR.TabStop = false;
             // 
             // buttonClose_SIR
             // 
+            buttonClose_SIR.BackColor = SystemColors.Control;
             buttonClose_SIR.Location = new Point(494, 293);
             buttonClose_SIR.Margin = new Padding(3, 4, 3, 4);
             buttonClose_SIR.Name = "buttonClose_SIR";
             buttonClose_SIR.Size = new Size(84, 43);
             buttonClose_SIR.TabIndex = 2;
             buttonClose_SIR.Text = "Ok";
-            buttonClose_SIR.UseVisualStyleBackColor = true;
+            buttonClose_SIR.UseVisualStyleBackColor = false;
             buttonClose_SIR.Click += buttonClose_SIR_Click;
             // 
-            // FormAboutMe
+            // FormAboutMe_SIR
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -74,10 +76,10 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
             Controls.Add(buttonClose_SIR);
             Controls.Add(pictureBoxAvatar_SIR);
             Controls.Add(textBoxAboutMe_SIR);
+            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             MinimizeBox = false;
-            Margin = new Padding(3, 4, 3, 4);
-            Name = "FormAboutMe";
+            Name = "FormAboutMe_SIR";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "О разработчике";
             ((System.ComponentModel.ISupportInitialize)pictureBoxAvatar_SIR).EndInit();
