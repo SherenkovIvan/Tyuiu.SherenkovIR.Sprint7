@@ -33,9 +33,9 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain_SIR));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             dataGridViewOrder_SIR = new DataGridView();
             buttonAddOrder_SIR = new Button();
             toolTip_SIR = new ToolTip(components);
@@ -49,8 +49,8 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
             buttonRemovePrise_SIR = new Button();
             buttonRemoveSearch_SIR = new Button();
             textBoxMinPrice_SIR = new TextBox();
-            textBoxSearch_SIR = new TextBox();
             textBoxMaxPrice_SIR = new TextBox();
+            textBoxSearch_SIR = new TextBox();
             labelStatistick_SIR = new Label();
             chartOrder_SIR = new System.Windows.Forms.DataVisualization.Charting.Chart();
             toolStrip_SIR = new ToolStrip();
@@ -214,15 +214,6 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
             textBoxMinPrice_SIR.TabIndex = 8;
             toolTip_SIR.SetToolTip(textBoxMinPrice_SIR, "Введите начальное значение для фильтра цены");
             // 
-            // textBoxSearch_SIR
-            // 
-            textBoxSearch_SIR.Anchor = AnchorStyles.Bottom;
-            textBoxSearch_SIR.Location = new Point(138, 124);
-            textBoxSearch_SIR.Multiline = true;
-            textBoxSearch_SIR.Name = "textBoxSearch_SIR";
-            textBoxSearch_SIR.Size = new Size(121, 42);
-            textBoxSearch_SIR.TabIndex = 4;
-            // 
             // textBoxMaxPrice_SIR
             // 
             textBoxMaxPrice_SIR.Anchor = AnchorStyles.Bottom;
@@ -232,6 +223,15 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
             textBoxMaxPrice_SIR.Size = new Size(84, 41);
             textBoxMaxPrice_SIR.TabIndex = 9;
             toolTip_SIR.SetToolTip(textBoxMaxPrice_SIR, "Введите крайнее значения для фльтра цены");
+            // 
+            // textBoxSearch_SIR
+            // 
+            textBoxSearch_SIR.Anchor = AnchorStyles.Bottom;
+            textBoxSearch_SIR.Location = new Point(138, 124);
+            textBoxSearch_SIR.Multiline = true;
+            textBoxSearch_SIR.Name = "textBoxSearch_SIR";
+            textBoxSearch_SIR.Size = new Size(121, 42);
+            textBoxSearch_SIR.TabIndex = 4;
             // 
             // labelStatistick_SIR
             // 
@@ -246,16 +246,16 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
             // chartOrder_SIR
             // 
             chartOrder_SIR.Anchor = AnchorStyles.Left;
-            chartArea2.Name = "ChartArea1";
-            chartOrder_SIR.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            chartOrder_SIR.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            chartOrder_SIR.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            chartOrder_SIR.Legends.Add(legend1);
             chartOrder_SIR.Location = new Point(-3, 43);
             chartOrder_SIR.Name = "chartOrder_SIR";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            chartOrder_SIR.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            chartOrder_SIR.Series.Add(series1);
             chartOrder_SIR.Size = new Size(642, 159);
             chartOrder_SIR.TabIndex = 13;
             chartOrder_SIR.Text = "chart1";
@@ -353,7 +353,7 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
             Controls.Add(dataGridViewOrder_SIR);
             MinimumSize = new Size(1430, 650);
             Name = "FormMain_SIR";
-            Text = "Приложение для заказов. Выполнил Шеренков И. Р. студент группы ИБКСБ-25-1";
+            Text = "Приложение для заказов. Выполнил Шеренков И. Р. и Шакиров С. А. (Qasqader) студенты группы ИБКСБ-25-1";
             ((System.ComponentModel.ISupportInitialize)dataGridViewOrder_SIR).EndInit();
             ((System.ComponentModel.ISupportInitialize)chartOrder_SIR).EndInit();
             toolStrip_SIR.ResumeLayout(false);
