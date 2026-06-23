@@ -24,5 +24,10 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
         {
             this.Close();
         }
+
+        private void textBoxAboutMe_SIR_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

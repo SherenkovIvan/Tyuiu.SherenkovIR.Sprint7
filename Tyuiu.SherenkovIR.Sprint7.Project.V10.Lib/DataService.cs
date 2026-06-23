@@ -28,6 +28,8 @@
         public string AccountNumber { get; set; } = string.Empty;
     }
 
+
+
     // Класс OrderManager управляет коллекцией заказов
     public class OrderManager
     {
@@ -68,6 +70,30 @@
                 (o.LastName != null && o.LastName.Contains(clientName, StringComparison.OrdinalIgnoreCase)) ||
                 (o.FirstName != null && o.FirstName.Contains(clientName, StringComparison.OrdinalIgnoreCase)) ||
                 (o.MiddleName != null && o.MiddleName.Contains(clientName, StringComparison.OrdinalIgnoreCase))).ToList();
+        }
+        // Метод для поиска заказов по всем полям
+        public List<Order> SearchByAllFields(string searchTerm)
+        {
+            // Если строка поиска пуста или содержит только пробелы, возвращаем пустой список
+            if (string.IsNullOrWhiteSpace(searchTerm))
+            {
+                return new List<Order>();
+            }
+
+            return Orders.Where(o =>
+                (o.OrderNumber != null && o.OrderNumber.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)) ||
+                (o.LastName != null && o.LastName.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)) ||
+                (o.FirstName != null && o.FirstName.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)) ||
+                (o.MiddleName != null && o.MiddleName.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)) ||
+                (o.Index != null && o.Index.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)) ||
+                (o.City != null && o.City.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)) ||
+                (o.Address != null && o.Address.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)) ||
+                (o.PhoneNumber != null && o.PhoneNumber.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)) ||
+                (o.OrderName != null && o.OrderName.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)) ||
+                (o.AccountNumber != null && o.AccountNumber.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)) ||
+                o.Price.ToString().Contains(searchTerm) ||
+                o.Quantity.ToString().Contains(searchTerm)
+            ).ToList();
         }
         // Метод для сортировки заказов по цене (по возрастанию)
         public void SortByPrice()

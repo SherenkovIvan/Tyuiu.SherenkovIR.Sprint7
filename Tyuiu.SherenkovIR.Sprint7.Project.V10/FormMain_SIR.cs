@@ -84,31 +84,33 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
         {
             try
             {
-                // Получение поискового запроса из текстового поля с удалением пробелов
-                var searchTerm = textBoxSearch_SIR.Text?.Trim(); 
+                // Получаем поисковый запрос из текстового поля и убираем пробелы
+                var searchTerm = textBoxSearch_SIR.Text?.Trim();
 
                 if (orderManager.Orders == null || orderManager.Orders.Count == 0)
                 {
-                    // Проверка наличия заказов для поиска
-                    MessageBox.Show("Нет заказов для поиска.", "Информация",
+                    // Показываем сообщение об отсутствии заказов
+                    MessageBox.Show("Нет данных для поиска.", "Информация",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
-                // Выполнение поиска по имени клиента
-                var filteredOrders = orderManager.SearchByClientName(searchTerm);
-                // Проверка результатов поиска
+
+                // Выполняем поиск по всем полям
+                var filteredOrders = orderManager.SearchByAllFields(searchTerm);
+
+                // Обновляем отображение таблицы
                 if (filteredOrders == null || filteredOrders.Count == 0)
                 {
                     dataGridViewOrder_SIR.DataSource = null;
 
-                    MessageBox.Show($"По запросу '{searchTerm}' ничего не найдено.",
+                    MessageBox.Show($"По запросу '{searchTerm}' заказов не найдено.",
                         "Результаты поиска",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                 }
                 else
                 {
-                    // Отображение найденных заказов в DataGridView
+                    // Отображаем отфильтрованные заказы в DataGridView
                     dataGridViewOrder_SIR.DataSource = filteredOrders;
 
                     MessageBox.Show($"Найдено заказов: {filteredOrders.Count}",

@@ -118,13 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="textBoxAboutMe_SIR.Text" xml:space="preserve">
-    <value>Разработчик: Шеренков Иван Романович
+    <value>Разработчики: Шеренков Иван Романович
+Шакиров Сергей Александрович (Qasqader)
 группа ИБКСб-25-1
 
 Программа разработана в рамках изучения языка C#
+и в ходе ознакомительной учебной практики
 
-Тюменский индустриальный университет (с) 2025
-Высшая школа цифровых технологий (с) 2025
+Тюменский индустриальный университет (с) 2025-2026
+Высшая школа цифровых технологий (с) 2025-2026
+
 
 Внутреннее имя:
 Tyuiu.SherenkovIR.Sprint7.Project.V10</value>

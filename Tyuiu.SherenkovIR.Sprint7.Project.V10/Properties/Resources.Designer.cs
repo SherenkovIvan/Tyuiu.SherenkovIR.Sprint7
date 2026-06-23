@@ -59,5 +59,15 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap photo_2025_12_23_23_20_57 {
+            get {
+                object obj = ResourceManager.GetObject("photo_2025-12-23_23-20-57", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
