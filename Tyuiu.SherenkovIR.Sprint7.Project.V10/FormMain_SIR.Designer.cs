@@ -221,6 +221,7 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
             textBoxMinPrice_SIR.Name = "textBoxMinPrice_SIR";
             textBoxMinPrice_SIR.Size = new Size(81, 41);
             textBoxMinPrice_SIR.TabIndex = 8;
+            toolTip_SIR.SetToolTip(textBoxMinPrice_SIR, "Введите начальное значение для фильтра цены");
             // 
             // textBoxMaxPrice_SIR
             // 
