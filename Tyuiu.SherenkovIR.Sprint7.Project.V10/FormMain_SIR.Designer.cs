@@ -76,7 +76,7 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
             dataGridViewOrder_SIR.Location = new Point(0, 0);
             dataGridViewOrder_SIR.Name = "dataGridViewOrder_SIR";
             dataGridViewOrder_SIR.RowHeadersWidth = 51;
-            dataGridViewOrder_SIR.Size = new Size(1412, 603);
+            dataGridViewOrder_SIR.Size = new Size(1578, 603);
             dataGridViewOrder_SIR.TabIndex = 0;
             // 
             // buttonAddOrder_SIR
@@ -222,7 +222,7 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
             textBoxMaxPrice_SIR.Name = "textBoxMaxPrice_SIR";
             textBoxMaxPrice_SIR.Size = new Size(84, 41);
             textBoxMaxPrice_SIR.TabIndex = 9;
-            toolTip_SIR.SetToolTip(textBoxMaxPrice_SIR, "Введите крайнее значения для фльтра цены");
+            toolTip_SIR.SetToolTip(textBoxMaxPrice_SIR, "Введите крайнее значение для фльтра цены");
             // 
             // textBoxSearch_SIR
             // 
@@ -303,7 +303,7 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
             panelElements_SIR.Location = new Point(0, 362);
             panelElements_SIR.MinimumSize = new Size(962, 241);
             panelElements_SIR.Name = "panelElements_SIR";
-            panelElements_SIR.Size = new Size(1412, 241);
+            panelElements_SIR.Size = new Size(1578, 241);
             panelElements_SIR.TabIndex = 18;
             // 
             // groupBoxPanel_SIR
@@ -323,7 +323,7 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
             groupBoxPanel_SIR.Controls.Add(buttonClose_SIR);
             groupBoxPanel_SIR.Controls.Add(textBoxSearch_SIR);
             groupBoxPanel_SIR.Controls.Add(buttonSearch_SIR);
-            groupBoxPanel_SIR.Location = new Point(978, 3);
+            groupBoxPanel_SIR.Location = new Point(1144, 3);
             groupBoxPanel_SIR.MinimumSize = new Size(434, 208);
             groupBoxPanel_SIR.Name = "groupBoxPanel_SIR";
             groupBoxPanel_SIR.Size = new Size(434, 208);
@@ -347,7 +347,7 @@ namespace Tyuiu.SherenkovIR.Sprint7.Project.V10
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            ClientSize = new Size(1412, 603);
+            ClientSize = new Size(1578, 603);
             Controls.Add(groupBoxStatic_SIR);
             Controls.Add(panelElements_SIR);
             Controls.Add(dataGridViewOrder_SIR);

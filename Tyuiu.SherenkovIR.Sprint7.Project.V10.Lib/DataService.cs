@@ -1,31 +1,44 @@
-﻿namespace Tyuiu.SherenkovIR.Sprint7.Project.V10.Lib
+﻿using System.ComponentModel;
+namespace Tyuiu.SherenkovIR.Sprint7.Project.V10.Lib
 {
 
     public class Order
     {
-        public string OrderNumber { get; set; } = string.Empty;
+        [DisplayName("Номер заказа")]
+        public string OrderNumber { get; set; }
 
-        public string LastName { get; set; } = string.Empty;
+        [DisplayName("Фамилия")]
+        public string LastName { get; set; }
 
-        public string FirstName { get; set; } = string.Empty;
+        [DisplayName("Имя")]
+        public string FirstName { get; set; }
 
-        public string MiddleName { get; set; } = string.Empty;
+        [DisplayName("Отчество")]
+        public string MiddleName { get; set; }
 
-        public string Index { get; set; } = string.Empty;
+        [DisplayName("Индекс")]
+        public string Index { get; set; }
 
-        public string City { get; set; } = string.Empty;
+        [DisplayName("Город")]
+        public string City { get; set; }
 
-        public string Address { get; set; } = string.Empty;
+        [DisplayName("Адрес")]
+        public string Address { get; set; }
 
-        public string PhoneNumber { get; set; } = string.Empty;
+        [DisplayName("Телефон")]
+        public string PhoneNumber { get; set; }
 
-        public string OrderName { get; set; } = string.Empty;
+        [DisplayName("Название товара")]
+        public string OrderName { get; set; }
 
-        public decimal Price { get; set; } 
+        [DisplayName("Цена")]
+        public decimal Price { get; set; }
 
+        [DisplayName("Количество")]
         public int Quantity { get; set; }
 
-        public string AccountNumber { get; set; } = string.Empty;
+        [DisplayName("Номер счёта")]
+        public string AccountNumber { get; set; }
     }
 
 
